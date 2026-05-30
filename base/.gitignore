@@ -1,5 +1,0 @@
-cache/
-cert.pem
-key.pem
-node_modules/
-.env

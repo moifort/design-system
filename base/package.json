@@ -1,8 +1,0 @@
-{
-  "name": "base",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "serve": "bun run serve.ts"
-  }
-}

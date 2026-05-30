@@ -13,9 +13,11 @@ in Storybook.
 - `storybook/` — Vite + React + TypeScript + styled-components component library, Atomic
   Design (atoms → molecules → organisms), Storybook as the validation harness. Published
   to GitHub Pages via `.github/workflows/storybook.yml`. See `storybook/CLAUDE.md` for
-  component-level rules.
-- `base/` — caching reverse proxy mirroring the live reference console (server-side
-  auto-login, plain HTTP). The pixel-perfect ground truth components are rebuilt against.
+  component-level rules. **This is the guide** — the only tracked, shipped part.
+- `base/` — **local-only, gitignored** caching reverse proxy that mirrors the live UniFi
+  console (server-side auto-login, plain HTTP). It is the inspiration cache used as the
+  pixel-perfect reference while rebuilding components — a developer tool, **not part of
+  the guide** and never committed.
 
 ## Run / build
 

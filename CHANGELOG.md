@@ -7,6 +7,9 @@ This project does not (yet) use semantic version tags.
 ## [Unreleased]
 
 ### Changed
+- Excluded `base/` from the guide: the UniFi console mirror is now a local-only,
+  gitignored inspiration cache (a developer reference tool), no longer tracked or shipped.
+  The guide is `storybook/` alone.
 - Bumped the GitHub Pages workflow actions to their Node 24 majors
   (`checkout@v6`, `configure-pages@v6`, `upload-pages-artifact@v5`,
   `deploy-pages@v5`) to clear the Node 20 deprecation warning.

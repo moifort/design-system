@@ -34,3 +34,6 @@ reference/mirror/
 
 # Claude working files
 .claude/
+
+# Local reference mirror of the UniFi console (inspiration cache, not part of the guide)
+base/

@@ -24,8 +24,8 @@ Gateway status card on a Waveshare 4-colour e-ink panel:
 - **Multi-theme from day one** — `light` and `dark` for screens, `eink` for 4-colour
   embedded panels. Components read every colour and font from the theme, so the *same*
   code renders natively across web, mobile, and embedded displays.
-- **Pixel-perfect, always** — each component is validated in Storybook against a live
-  mirror of the reference console, so what you see is exactly the real thing.
+- **Pixel-perfect, always** — each component is validated in Storybook against the
+  reference console, so what you see is exactly the real thing.
 - **Portable** — hard-coded mock data, no backend; drop components into any React app.
 
 ### Components today
@@ -36,7 +36,5 @@ Gateway status card on a Waveshare 4-colour e-ink panel:
 ## Structure
 
 - `storybook/` — the React + styled-components component library and its Storybook.
-- `base/` — a caching mirror of the live reference console, used as the pixel-perfect
-  ground truth the components are rebuilt against.
 
 > Build, run, theming, and contribution rules live in [`CLAUDE.md`](CLAUDE.md).

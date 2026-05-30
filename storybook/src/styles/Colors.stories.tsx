@@ -142,11 +142,12 @@ const ChipValue = styled.code<{ $mode: "light" | "dark" }>`
   line-height: 1.3;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   color: ${({ $mode }) => ($mode === "light" ? "#6b7178" : "#9aa1ab")};
-  white-space: nowrap;
+  text-align: center;
+  overflow-wrap: anywhere;
 `;
 
-/** Compact `hsla(...)` → readable value: keep it as-is, it's already canonical. */
-const fmt = (v: string) => v.replace(/,\s*1\)$/, ")");
+/** Compact `hsla(214, 100%, 95%, 1)` → `hsla(214,100%,95%)` so it fits under a swatch. */
+const fmt = (v: string) => v.replace(/,\s*1\)$/, ")").replace(/,\s+/g, ",");
 
 function ModeStrip({ family, mode }: { family: PaletteFamily; mode: "light" | "dark" }) {
   return (

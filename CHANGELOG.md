@@ -7,14 +7,22 @@ This project does not (yet) use semantic version tags.
 ## [Unreleased]
 
 ### Added
-- **Component stories for every atom and molecule** of the GatewayCard, each a single
-  tri-theme gallery (light · dark · e-ink) listing the component's declinations:
-  - Atoms — `Surface`, `Text` (7 tones + `$strong`), `Icon` (all 10 glyphs, sizes,
-    `currentColor` tints), `Divider`, `Sparkline` (realistic / ramp / spiky / flat).
-  - Molecules — `Header`, `CounterGroup`, `DataRow`, `MetricPair`, `ChipGroup`, `Button`
+- **A story for every component**, each a single tri-theme gallery (light · dark · e-ink)
+  listing the component's declinations:
+  - Foundations (`Design System` section) — `Surface`, `Text` (7 tones + `$strong`), `Icon`
+    (all 10 glyphs, sizes, `currentColor` tints), `Divider`, `Sparkline`
+    (realistic / ramp / spiky / flat).
+  - Atoms — `Header`, `CounterGroup`, `DataRow`, `MetricPair`, `ChipGroup`, `Button`
     (generic, reusable names — not domain-specific).
   - New `src/styles/Showcase.tsx` helper (`Stack` / `Row` / `Frame` / `Specimen`) for
     laying out labelled specimens inside a `ThemeShowcase`.
+- **Component declinations**, reverse-engineered from the reference:
+  - `Button` — full variant system: `variant` (primary · secondary · tertiary · link),
+    `tone` (default · danger), `size` (small · medium · large), plus `disabled` and
+    `fullWidth`.
+  - `Header` — optional `thumbnail` (title-only when omitted) and `action` toggle for the
+    trailing detail button; the brand asset is no longer baked into the component.
+  - `ChipGroup` — `logo` is optional, for value-only chips.
 - **Design System / Colors** page (`Design System/Colors` story) documenting the colour
   foundation: the primary blue scale, the supporting primitive hues (green, aqua, purple,
   red) and the neutral greys — each shown `light` + `dark` — plus the semantic tokens
@@ -28,11 +36,18 @@ This project does not (yet) use semantic version tags.
   dark, e-ink) side by side. Convention: one story per component, every medium at once.
 
 ### Changed
-- **Sidebar split into two sections**: `Design System` (foundations — colours) and
-  `Components` (`Components/Organisms → Components/Molecules → Components/Atoms`). Molecule
-  components renamed to generic, reusable names: `DeviceHeader → Header`,
-  `ActionButton → Button`, `StatRow → DataRow`, `ConnectionCounts → CounterGroup`,
-  `Throughput → MetricPair`, `LatencyRow → ChipGroup`.
+- **Taxonomy shifted one rung** so the tier names match how the system is built: the
+  minuscule primitives (`Surface`, `Text`, `Icon`, `Divider`, `Sparkline`) move to a
+  `foundations/` folder under the **`Design System`** section (with `Colors`); the former
+  molecules (`Header`, `CounterGroup`, `DataRow`, `MetricPair`, `ChipGroup`, `Button`)
+  become the **`Atoms`** tier; `Molecules` is reserved for card-composition patterns;
+  organisms unchanged. Components also renamed to generic, reusable names:
+  `DeviceHeader → Header`, `ActionButton → Button`, `StatRow → DataRow`,
+  `ConnectionCounts → CounterGroup`, `Throughput → MetricPair`, `LatencyRow → ChipGroup`.
+- `CounterGroup` — the first connector between counters is now a solid accent line and the
+  rest dotted (was all-dotted), matching the reference.
+- `GatewayCard` — its two action buttons are pinned to `variant="secondary"` + `fullWidth`
+  to preserve their look now that `Button` defaults to `primary`.
 - `GatewayCard` stories collapsed into a single `Themes` story (light · dark · e-ink,
   left → right) via `ThemeShowcase`, replacing the per-theme `Default` / `Dark` stories
   and the separate e-ink stories file.

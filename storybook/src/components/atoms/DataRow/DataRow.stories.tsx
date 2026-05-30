@@ -68,6 +68,16 @@ export const Themes: Story = {
             <DataRow label="Health" value="100 %" valueTone="success" />
           </Frame>
         </Specimen>
+        <Specimen label="valueTone · throughput">
+          <Frame $w={240}>
+            <DataRow label="Latency" value="48 ms" valueTone="upload" />
+          </Frame>
+        </Specimen>
+        <Specimen label="tone · link">
+          <Frame $w={240}>
+            <DataRow label="ISP Speed Test" labelTone="link" value="Run" valueTone="link" />
+          </Frame>
+        </Specimen>
         <Specimen label="custom label · logo + link">
           <Frame $w={240}>
             <DataRow

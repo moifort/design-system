@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Text } from "../../foundations/Text/Text";
 import { Icon } from "../../foundations/Icon/Icon";
-import thumbnail from "../../../assets/brands/ucg-ultra.png";
 
 const Row = styled.div`
   display: flex;
@@ -41,17 +40,27 @@ const TrailingButton = styled.button`
   flex: none;
 `;
 
-/** Panel header: leading thumbnail/logo + title (ellipsised) + trailing circular icon button. */
-export function Header({ name }: { name: string }) {
+export type HeaderProps = {
+  name: string;
+  /** Optional leading product logo; omit for a title-only header. */
+  thumbnail?: string;
+  /** Show the trailing circular detail button (default true). */
+  action?: boolean;
+};
+
+/** Panel header: optional leading logo + title (ellipsised) + optional trailing icon button. */
+export function Header({ name, thumbnail, action = true }: HeaderProps) {
   return (
     <Row>
-      <Thumb src={thumbnail} alt="UCG Ultra" />
+      {thumbnail && <Thumb src={thumbnail} alt={name} />}
       <Name $tone="primary" $strong>
         {name}
       </Name>
-      <TrailingButton type="button" aria-label="Details">
-        <Icon name="panel" size={15} />
-      </TrailingButton>
+      {action && (
+        <TrailingButton type="button" aria-label="Details">
+          <Icon name="panel" size={15} />
+        </TrailingButton>
+      )}
     </Row>
   );
 }

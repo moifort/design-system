@@ -12,6 +12,7 @@ import { ChipGroup } from "../../atoms/ChipGroup/ChipGroup";
 import { Button } from "../../atoms/Button/Button";
 import type { GatewayCardData } from "../../../types/dashboard";
 
+import ucgUltra from "../../../assets/brands/ucg-ultra.png";
 import freeSas from "../../../assets/brands/free-sas.png";
 import microsoft from "../../../assets/brands/microsoft.png";
 import google from "../../../assets/brands/google.png";
@@ -65,7 +66,7 @@ const latencyLogos: Record<
 export function GatewayCard({ data }: { data: GatewayCardData }) {
   return (
     <Card>
-      <Header name={data.device.name} />
+      <Header name={data.device.name} thumbnail={ucgUltra} />
 
       <Group $mt={8}>
         <CounterGroup

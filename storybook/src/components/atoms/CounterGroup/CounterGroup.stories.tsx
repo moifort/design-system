@@ -13,9 +13,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * A row of icon + count metrics joined by dotted connectors that fill the gaps. Counters
- * stay accent-blue across **light** / **dark** and turn black on **e-ink**. Shown with
- * varying item counts and magnitudes.
+ * A row of icon + count metrics joined by accent connectors that fill the gaps — the
+ * first gap **solid**, the rest **dotted**, as in the reference. Counters stay accent-blue
+ * across **light** / **dark** and turn black on **e-ink**. Shown with varying item counts
+ * and magnitudes.
  */
 export const Themes: Story = {
   args: { items: [] },

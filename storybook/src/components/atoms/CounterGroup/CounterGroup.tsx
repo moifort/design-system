@@ -19,23 +19,25 @@ const Item = styled.div`
   flex: none;
 `;
 
-/** Dotted accent line filling the space between two counters. */
-const Connector = styled.div`
+/** Accent line filling the space between two counters — solid for the first gap,
+ *  dotted for the rest (matches the reference). */
+const Connector = styled.div<{ $solid?: boolean }>`
   flex: 1 1 auto;
-  border-top: 1px dotted ${({ theme }) => theme.color.link};
+  border-top: 1px ${({ $solid }) => ($solid ? "solid" : "dotted")} ${({ theme }) => theme.color.link};
   align-self: center;
   min-width: 8px;
 `;
 
 export type CounterItem = { icon: GlyphName; count: number };
 
-/** A row of icon + count metrics joined by dotted connectors. */
+/** A row of icon + count metrics joined by accent connectors — the first gap solid,
+ *  the rest dotted, as in the reference. */
 export function CounterGroup({ items }: { items: CounterItem[] }) {
   return (
     <Row>
       {items.map((it, i) => (
         <Fragment key={it.icon}>
-          {i > 0 && <Connector />}
+          {i > 0 && <Connector $solid={i === 1} />}
           <Item>
             <Icon name={it.icon} size={20} />
             <Text $tone="label" $strong>

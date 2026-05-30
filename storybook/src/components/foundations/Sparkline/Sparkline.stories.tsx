@@ -5,7 +5,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Atoms/Sparkline",
+  title: "Design System/Sparkline",
   component: Sparkline,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Sparkline>;

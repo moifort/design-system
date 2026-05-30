@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import styled from "styled-components";
-import { Icon, type GlyphName } from "../../atoms/Icon/Icon";
-import { Text } from "../../atoms/Text/Text";
+import { Icon, type GlyphName } from "../../foundations/Icon/Icon";
+import { Text } from "../../foundations/Text/Text";
 
 const Row = styled.div`
   display: flex;

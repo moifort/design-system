@@ -5,7 +5,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Atoms/Surface",
+  title: "Design System/Surface",
   component: Surface,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Surface>;

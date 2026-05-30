@@ -5,7 +5,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Atoms/Divider",
+  title: "Design System/Divider",
   component: Divider,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Divider>;

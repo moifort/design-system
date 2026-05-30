@@ -4,7 +4,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Atoms/Text",
+  title: "Design System/Text",
   component: Text,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Text>;

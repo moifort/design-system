@@ -4,7 +4,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Molecules/MetricPair",
+  title: "Components/Atoms/MetricPair",
   component: MetricPair,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof MetricPair>;

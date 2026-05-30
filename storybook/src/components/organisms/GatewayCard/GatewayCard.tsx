@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { Surface } from "../../atoms/Surface/Surface";
-import { Text } from "../../atoms/Text/Text";
-import { Icon } from "../../atoms/Icon/Icon";
-import { Divider } from "../../atoms/Divider/Divider";
-import { Sparkline } from "../../atoms/Sparkline/Sparkline";
-import { Header } from "../../molecules/Header/Header";
-import { CounterGroup } from "../../molecules/CounterGroup/CounterGroup";
-import { DataRow } from "../../molecules/DataRow/DataRow";
-import { MetricPair } from "../../molecules/MetricPair/MetricPair";
-import { ChipGroup } from "../../molecules/ChipGroup/ChipGroup";
-import { Button } from "../../molecules/Button/Button";
+import { Surface } from "../../foundations/Surface/Surface";
+import { Text } from "../../foundations/Text/Text";
+import { Icon } from "../../foundations/Icon/Icon";
+import { Divider } from "../../foundations/Divider/Divider";
+import { Sparkline } from "../../foundations/Sparkline/Sparkline";
+import { Header } from "../../atoms/Header/Header";
+import { CounterGroup } from "../../atoms/CounterGroup/CounterGroup";
+import { DataRow } from "../../atoms/DataRow/DataRow";
+import { MetricPair } from "../../atoms/MetricPair/MetricPair";
+import { ChipGroup } from "../../atoms/ChipGroup/ChipGroup";
+import { Button } from "../../atoms/Button/Button";
 import type { GatewayCardData } from "../../../types/dashboard";
 
 import freeSas from "../../../assets/brands/free-sas.png";

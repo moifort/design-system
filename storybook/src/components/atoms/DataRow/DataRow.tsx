@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
-import { Text, type TextTone } from "../../atoms/Text/Text";
+import { Text, type TextTone } from "../../foundations/Text/Text";
 
 const Row = styled.div`
   display: flex;

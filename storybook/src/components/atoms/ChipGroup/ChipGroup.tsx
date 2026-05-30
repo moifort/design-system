@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "../../atoms/Text/Text";
+import { Text } from "../../foundations/Text/Text";
 
 const Row = styled.div`
   display: flex;

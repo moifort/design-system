@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Text } from "../../atoms/Text/Text";
-import { Icon } from "../../atoms/Icon/Icon";
+import { Text } from "../../foundations/Text/Text";
+import { Icon } from "../../foundations/Icon/Icon";
 import thumbnail from "../../../assets/brands/ucg-ultra.png";
 
 const Row = styled.div`

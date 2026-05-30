@@ -4,7 +4,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Molecules/Button",
+  title: "Components/Atoms/Button",
   component: Button,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Button>;

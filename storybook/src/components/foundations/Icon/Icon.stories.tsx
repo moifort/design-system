@@ -5,7 +5,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Row, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Atoms/Icon",
+  title: "Design System/Icon",
   component: Icon,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Icon>;

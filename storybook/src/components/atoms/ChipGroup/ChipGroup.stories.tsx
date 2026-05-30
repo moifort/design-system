@@ -7,7 +7,7 @@ import google from "../../../assets/brands/google.png";
 import cloudflare from "../../../assets/brands/cloudflare.svg";
 
 const meta = {
-  title: "Components/Molecules/ChipGroup",
+  title: "Components/Atoms/ChipGroup",
   component: ChipGroup,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof ChipGroup>;

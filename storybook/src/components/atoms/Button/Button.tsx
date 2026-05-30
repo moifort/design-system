@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon, type GlyphName } from "../../atoms/Icon/Icon";
+import { Icon, type GlyphName } from "../../foundations/Icon/Icon";
 
 const Root = styled.button`
   display: flex;

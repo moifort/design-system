@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import styled from "styled-components";
 import { DataRow } from "./DataRow";
-import { Text } from "../../atoms/Text/Text";
-import { Icon } from "../../atoms/Icon/Icon";
+import { Text } from "../../foundations/Text/Text";
+import { Icon } from "../../foundations/Icon/Icon";
 import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 import freeSas from "../../../assets/brands/free-sas.png";
 
 const meta = {
-  title: "Components/Molecules/DataRow",
+  title: "Components/Atoms/DataRow",
   component: DataRow,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof DataRow>;

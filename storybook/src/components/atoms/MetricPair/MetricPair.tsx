@@ -1,6 +1,6 @@
 import styled, { useTheme } from "styled-components";
-import { Icon } from "../../atoms/Icon/Icon";
-import { Text } from "../../atoms/Text/Text";
+import { Icon } from "../../foundations/Icon/Icon";
+import { Text } from "../../foundations/Text/Text";
 
 const Wrap = styled.div`
   display: flex;

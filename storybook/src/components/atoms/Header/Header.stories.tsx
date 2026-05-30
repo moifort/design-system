@@ -4,7 +4,7 @@ import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 import { Stack, Frame, Specimen } from "../../../styles/Showcase";
 
 const meta = {
-  title: "Components/Molecules/Header",
+  title: "Components/Atoms/Header",
   component: Header,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof Header>;

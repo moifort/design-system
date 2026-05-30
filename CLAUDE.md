@@ -33,24 +33,33 @@ cd base && cp .env.example .env   # fill in credentials
 bun run serve            # → http://localhost:8443
 ```
 
-## Before committing / publishing (MANDATORY)
+## Before committing each change (MANDATORY)
 
-Do all of the following, in order, before considering any change done:
+Do these, in order, before considering any change done:
 
 1. **Typecheck** — `cd storybook && bunx tsc --noEmit` must pass.
 2. **Visual check** — for any UI change, open Storybook in Safari so the result is
    visible (`open -a Safari http://localhost:6006`; start `bun run storybook` first if
    needed). Do this automatically, without being asked.
-3. **Update `CHANGELOG.md`** — add the change under `[Unreleased]`, Keep a Changelog
-   format (`Added` / `Changed` / `Fixed` / `Removed`).
-4. **Update `README.md`** — keep it in sync (functional + previews only; no process).
-5. **Regroup local commits by theme** — fold locally-written commits into atomic,
-   theme-coherent commits. A rollback merges back into the fix it reverts; WIP/fixup
-   noise is squashed. Stay atomic, but not over-split — one logical change per commit.
-   History rewrite is safe while there is no remote/upstream (`git rev-parse @{u}` to
-   verify before rewriting).
+3. **Commit** the code change — conventional commits (`type(scope): description`), English.
 
-Commit messages: conventional commits (`type(scope): description`), in English.
+Do **not** touch `CHANGELOG.md` / `README.md` per change, and do **not** regroup/rewrite
+commits as you go. Those are deferred to push time (below).
+
+## Before pushing — ONLY when the user asks to push (MANDATORY)
+
+`CHANGELOG.md`, `README.md`, and commit-history cleanup are done **only** when the user
+explicitly asks to push to the GitHub repo — never as a routine per-change step:
+
+1. **Update `CHANGELOG.md`** — fold all unpushed work under `[Unreleased]`, Keep a Changelog
+   format (`Added` / `Changed` / `Fixed` / `Removed`).
+2. **Update `README.md`** — bring it in sync with the unpushed work (functional + previews
+   only; no process).
+3. **Regroup local commits by theme** — fold the unpushed commits into atomic,
+   theme-coherent commits. A rollback merges back into the fix it reverts; WIP/fixup noise
+   is squashed. Stay atomic, but not over-split — one logical change per commit. History
+   rewrite is safe while the work is unpushed (`git rev-parse @{u}` to verify first).
+4. Then push (the user decides when — never push without explicit confirmation).
 
 ## Theming
 

@@ -133,8 +133,8 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
       </Group>
 
       <Group $gap={8} $mt={12}>
-        <Button icon="speedTest" label="ISP Speed Test" />
-        <Button icon="wifiDoctor" label="WiFi Doctor" />
+        <Button icon="speedTest" label="ISP Speed Test" variant="secondary" fullWidth />
+        <Button icon="wifiDoctor" label="WiFi Doctor" variant="secondary" fullWidth />
       </Group>
     </Card>
   );

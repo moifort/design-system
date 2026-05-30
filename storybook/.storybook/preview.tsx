@@ -38,10 +38,15 @@ const withTheme: Decorator = (Story, context) => {
 };
 
 const preview: Preview = {
+  // Every component gets an auto-generated Docs tab (prose + props table + showcase).
+  tags: ["autodocs"],
   decorators: [withTheme],
   parameters: {
     layout: "centered",
     controls: { expanded: true },
+    options: {
+      storySort: { order: ["Organisms", "Molecules", "Atoms"] },
+    },
   },
 };
 

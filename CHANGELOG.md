@@ -7,6 +7,9 @@ This project does not (yet) use semantic version tags.
 ## [Unreleased]
 
 ### Added
+- Storybook **Docs**: `autodocs` enabled so every component gets an auto-generated Docs
+  tab (prose + props table + showcase), plus MDX support wired up (`../src/**/*.mdx` glob)
+  for hand-written doc pages. Sidebar ordered Organisms → Molecules → Atoms.
 - `ThemeShowcase` harness — renders a component across all three target screens (light,
   dark, e-ink) side by side. Convention: one story per component, every medium at once.
 

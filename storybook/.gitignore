@@ -1,0 +1,6 @@
+node_modules
+dist
+storybook-static
+*.log
+# Reverse-engineering capture artifacts (regenerate with `bun run extract`)
+scripts/reference/

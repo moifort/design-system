@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.output/
+.nuxt/
+.nitro/
+.cache/
+dist/
+
+# Logs / OS
+*.log
+.DS_Store
+
+# Local env & secrets
+.env
+.env.*
+!.env.example
+!.env.capture.example
+
+# Self-signed certs
+cert.pem
+key.pem
+
+# Caching proxy store (proprietary Ubiquiti bundles)
+cache/
+
+# Captured UniFi reference — proprietary, not redistributed
+reference/screenshots/
+reference/dom/
+reference/icons/
+reference/fonts/
+reference/mirror/
+
+# Claude working files
+.claude/

@@ -23,8 +23,9 @@ const Triangle = styled.span`
   line-height: 1;
 `;
 
-/** Throughput value: ↓ download (aqua) and ↑ upload (purple). */
-export function Throughput({ down, up }: { down: string; up: string }) {
+/** A directional pair of values — ↓ down (aqua) and ↑ up (purple). On e-ink the arrows
+ *  become filled triangles. */
+export function MetricPair({ down, up }: { down: string; up: string }) {
   const isEink = useTheme().mode === "eink";
   return (
     <Wrap>

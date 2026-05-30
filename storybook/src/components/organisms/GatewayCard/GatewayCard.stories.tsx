@@ -4,7 +4,7 @@ import { gatewayCardMock } from "../../../mocks/gatewayCard";
 import { ThemeShowcase } from "../../../styles/ThemeShowcase";
 
 const meta = {
-  title: "Organisms/GatewayCard",
+  title: "Components/Organisms/GatewayCard",
   component: GatewayCard,
   parameters: { layout: "fullscreen", themeShowcase: true },
 } satisfies Meta<typeof GatewayCard>;

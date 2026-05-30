@@ -17,18 +17,19 @@ const Value = styled.div`
   min-width: 0;
 `;
 
-type StatRowProps = {
+type DataRowProps = {
   label: ReactNode;
-  /** label tone (defaults to secondary label color) */
+  /** label tone (defaults to the secondary label color) */
   labelTone?: TextTone;
   value: ReactNode;
   valueTone?: TextTone;
-  /** trailing icon shown after the value (e.g. the "up to date" clock) */
+  /** trailing node shown after the value (e.g. a status icon) */
   trailing?: ReactNode;
 };
 
-/** One label/value line in a widget (space-between, 20px tall). */
-export function StatRow({ label, labelTone = "label", value, valueTone = "value", trailing }: StatRowProps) {
+/** One label/value line (space-between, 20px tall). Strings render as themable Text;
+ *  arbitrary nodes pass through untouched. */
+export function DataRow({ label, labelTone = "label", value, valueTone = "value", trailing }: DataRowProps) {
   return (
     <Row>
       {typeof label === "string" ? <Text $tone={labelTone}>{label}</Text> : label}

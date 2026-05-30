@@ -7,7 +7,7 @@ const Row = styled.div`
   gap: 8px;
 `;
 
-/** Each destination sits in a faint, rounded inset pill of equal width.
+/** Each item sits in a faint, rounded inset pill of equal width.
  *  On e-ink the grey fill would vanish at threshold, so it becomes a 1px box. */
 const Pill = styled.div`
   flex: 1 1 0;
@@ -26,14 +26,14 @@ const Logo = styled.img`
   height: 22px;
   object-fit: contain;
   flex: none;
-  /* e-ink: brand logos become solid black silhouettes */
+  /* e-ink: logos become solid black silhouettes */
   filter: ${({ theme }) => (theme.mode === "eink" ? "grayscale(1) brightness(0)" : "none")};
 `;
 
-export type LatencyItem = { logo: string; alt: string; value: string };
+export type ChipItem = { logo: string; alt: string; value: string };
 
-/** Per-destination latency pills (Microsoft / Google / Cloudflare). */
-export function LatencyRow({ items }: { items: LatencyItem[] }) {
+/** A row of equal-width chips, each pairing a logo with a value. */
+export function ChipGroup({ items }: { items: ChipItem[] }) {
   return (
     <Row>
       {items.map((it) => (

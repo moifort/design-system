@@ -4,12 +4,12 @@ import { Text } from "../../atoms/Text/Text";
 import { Icon } from "../../atoms/Icon/Icon";
 import { Divider } from "../../atoms/Divider/Divider";
 import { Sparkline } from "../../atoms/Sparkline/Sparkline";
-import { DeviceHeader } from "../../molecules/DeviceHeader/DeviceHeader";
-import { ConnectionCounts } from "../../molecules/ConnectionCounts/ConnectionCounts";
-import { StatRow } from "../../molecules/StatRow/StatRow";
-import { Throughput } from "../../molecules/Throughput/Throughput";
-import { LatencyRow } from "../../molecules/LatencyRow/LatencyRow";
-import { ActionButton } from "../../molecules/ActionButton/ActionButton";
+import { Header } from "../../molecules/Header/Header";
+import { CounterGroup } from "../../molecules/CounterGroup/CounterGroup";
+import { DataRow } from "../../molecules/DataRow/DataRow";
+import { MetricPair } from "../../molecules/MetricPair/MetricPair";
+import { ChipGroup } from "../../molecules/ChipGroup/ChipGroup";
+import { Button } from "../../molecules/Button/Button";
 import type { GatewayCardData } from "../../../types/dashboard";
 
 import freeSas from "../../../assets/brands/free-sas.png";
@@ -65,10 +65,10 @@ const latencyLogos: Record<
 export function GatewayCard({ data }: { data: GatewayCardData }) {
   return (
     <Card>
-      <DeviceHeader name={data.device.name} />
+      <Header name={data.device.name} />
 
       <Group $mt={8}>
-        <ConnectionCounts
+        <CounterGroup
           items={[
             { icon: "gatewayCount", count: data.counts.gateway },
             { icon: "wiredCount", count: data.counts.wired },
@@ -79,9 +79,9 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
       </Group>
 
       <Group $gap={8} $mt={8}>
-        <StatRow label="Gateway IP" value={data.status.gatewayIp} />
-        <StatRow label="System Uptime" value={data.status.uptime} />
-        <StatRow
+        <DataRow label="Gateway IP" value={data.status.gatewayIp} />
+        <DataRow label="System Uptime" value={data.status.uptime} />
+        <DataRow
           label={data.status.networkVersion}
           value="Up to date"
           trailing={
@@ -90,14 +90,14 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
             </ClockIcon>
           }
         />
-        <StatRow label={data.status.osVersion} value="Up to date" />
-        <StatRow label="Devices" value="Up to date" />
+        <DataRow label={data.status.osVersion} value="Up to date" />
+        <DataRow label="Devices" value="Up to date" />
       </Group>
 
       <Divider />
 
       <Group $gap={8}>
-        <StatRow
+        <DataRow
           label={
             <IspName>
               <FreeLogo src={freeSas} alt={data.isp.name} />
@@ -110,11 +110,11 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
             </Text>
           }
         />
-        <StatRow label="IPv4 Address" value={data.isp.ipv4} />
-        <StatRow label="Monthly Data Usage" value={data.isp.monthlyDataUsage} />
-        <StatRow
+        <DataRow label="IPv4 Address" value={data.isp.ipv4} />
+        <DataRow label="Monthly Data Usage" value={data.isp.monthlyDataUsage} />
+        <DataRow
           label="Throughput"
-          value={<Throughput down={data.isp.throughput.down} up={data.isp.throughput.up} />}
+          value={<MetricPair down={data.isp.throughput.down} up={data.isp.throughput.up} />}
         />
       </Group>
 
@@ -123,7 +123,7 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
       </SparkWrap>
 
       <Group $mt={12}>
-        <LatencyRow
+        <ChipGroup
           items={data.latency.map((l) => ({
             logo: latencyLogos[l.destination].logo,
             alt: latencyLogos[l.destination].alt,
@@ -133,8 +133,8 @@ export function GatewayCard({ data }: { data: GatewayCardData }) {
       </Group>
 
       <Group $gap={8} $mt={12}>
-        <ActionButton icon="speedTest" label="ISP Speed Test" />
-        <ActionButton icon="wifiDoctor" label="WiFi Doctor" />
+        <Button icon="speedTest" label="ISP Speed Test" />
+        <Button icon="wifiDoctor" label="WiFi Doctor" />
       </Group>
     </Card>
   );

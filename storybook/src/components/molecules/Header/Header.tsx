@@ -41,15 +41,15 @@ const TrailingButton = styled.button`
   flex: none;
 `;
 
-/** Card header: device thumbnail + name + trailing (circular) detail icon. */
-export function DeviceHeader({ name }: { name: string }) {
+/** Panel header: leading thumbnail/logo + title (ellipsised) + trailing circular icon button. */
+export function Header({ name }: { name: string }) {
   return (
     <Row>
       <Thumb src={thumbnail} alt="UCG Ultra" />
       <Name $tone="primary" $strong>
         {name}
       </Name>
-      <TrailingButton type="button" aria-label="Device details">
+      <TrailingButton type="button" aria-label="Details">
         <Icon name="panel" size={15} />
       </TrailingButton>
     </Row>

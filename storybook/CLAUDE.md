@@ -13,8 +13,10 @@ Storybook as the pixel-perfect validation harness. Hard-coded mock data, no back
 - **Autodocs everywhere.** `tags: ["autodocs"]` is global — every component gets a Docs
   tab (prose + props table + showcase). MDX is wired up (`../src/**/*.mdx` glob) for
   hand-written doc pages when a component needs more than the auto page.
-- **Sidebar order** is `Organisms → Molecules → Atoms` (`options.storySort` in
-  `.storybook/preview.tsx`).
+- **Sidebar sections**: `Design System` (foundations — colours, etc.) then `Components`
+  (`Components/Organisms → Components/Molecules → Components/Atoms`). Ordering lives in
+  `options.storySort` in `.storybook/preview.tsx`. Component titles are generic, not
+  domain-specific (e.g. `Button`, `Header`, `DataRow` — not `ActionButton`/`DeviceHeader`).
 
 ## Workflow rules
 

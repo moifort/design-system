@@ -19,7 +19,7 @@ const Item = styled.div`
   flex: none;
 `;
 
-/** Dotted line filling the space between two counts. */
+/** Dotted line filling the space between two counters. */
 const Connector = styled.div`
   flex: 1 1 auto;
   border-top: 1px dotted ${({ theme }) => theme.color.border};
@@ -27,10 +27,10 @@ const Connector = styled.div`
   min-width: 8px;
 `;
 
-export type ConnectionCount = { icon: GlyphName; count: number };
+export type CounterItem = { icon: GlyphName; count: number };
 
-/** Top-of-card connectivity counters (gateway · wired · wireless · clients). */
-export function ConnectionCounts({ items }: { items: ConnectionCount[] }) {
+/** A row of icon + count metrics joined by dotted connectors. */
+export function CounterGroup({ items }: { items: CounterItem[] }) {
   return (
     <Row>
       {items.map((it, i) => (

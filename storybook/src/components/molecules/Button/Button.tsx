@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Icon, type GlyphName } from "../../atoms/Icon/Icon";
 
-const Button = styled.button`
+const Root = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,12 +20,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-/** Outlined, full-width secondary action (e.g. "ISP Speed Test"). */
-export function ActionButton({ icon, label }: { icon: GlyphName; label: string }) {
+/** Outlined, full-width secondary action with a leading icon (e.g. "ISP Speed Test"). */
+export function Button({ icon, label }: { icon: GlyphName; label: string }) {
   return (
-    <Button type="button">
+    <Root type="button">
       <Icon name={icon} size={20} />
       {label}
-    </Button>
+    </Root>
   );
 }

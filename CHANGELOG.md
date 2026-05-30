@@ -63,6 +63,9 @@ This project does not (yet) use semantic version tags.
   a clean accent outline, matching the reference history icon.
 - `CounterGroup` — connector dots now use the accent colour instead of the neutral
   hairline grey, matching the reference.
+- **E-ink render harness** — restored the dedicated capture story and repointed
+  `scripts/eink-render.ts` (it referenced a story removed in the stories collapse), so
+  `bun run eink` works again and the panel PNG reflects the current GatewayCard.
 
 ### Added
 - Initial **Design System** foundation — a reusable component library for shipping

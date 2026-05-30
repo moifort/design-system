@@ -149,6 +149,33 @@ const ChipValue = styled.code<{ $mode: "light" | "dark" }>`
 /** Compact `hsla(214, 100%, 95%, 1)` → `hsla(214,100%,95%)` so it fits under a swatch. */
 const fmt = (v: string) => v.replace(/,\s*1\)$/, ")").replace(/,\s+/g, ",");
 
+/**
+ * Display value for a swatch: opaque colours render as `#RRGGBB` (what designers copy);
+ * values with alpha (the structural `border` / `fill` greys) stay HSLA, since hex can't
+ * carry transparency cleanly. The palette is authored in HSL — convert per channel.
+ */
+function toHex(value: string): string {
+  const m = value.match(/hsla?\(\s*([\d.]+),\s*([\d.]+)%,\s*([\d.]+)%(?:,\s*([\d.]+))?\)/);
+  if (!m) return fmt(value);
+  const alpha = m[4] === undefined ? 1 : Number.parseFloat(m[4]);
+  if (alpha !== 1) return fmt(value);
+  const h = Number.parseFloat(m[1]);
+  const s = Number.parseFloat(m[2]) / 100;
+  const l = Number.parseFloat(m[3]) / 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const base = l - c / 2;
+  const [r, g, b] =
+    h < 60 ? [c, x, 0]
+    : h < 120 ? [x, c, 0]
+    : h < 180 ? [0, c, x]
+    : h < 240 ? [0, x, c]
+    : h < 300 ? [x, 0, c]
+    : [c, 0, x];
+  const ch = (n: number) => Math.round((n + base) * 255).toString(16).padStart(2, "0");
+  return `#${ch(r)}${ch(g)}${ch(b)}`.toUpperCase();
+}
+
 function ModeStrip({ family, mode }: { family: PaletteFamily; mode: "light" | "dark" }) {
   return (
     <Strip $mode={mode}>
@@ -162,7 +189,7 @@ function ModeStrip({ family, mode }: { family: PaletteFamily; mode: "light" | "d
               <span>{step.step}</span>
               {brand ? <span>★</span> : null}
             </Chip>
-            <ChipValue $mode={mode}>{fmt(value)}</ChipValue>
+            <ChipValue $mode={mode}>{toHex(value)}</ChipValue>
           </Cell>
         );
       })}
@@ -243,8 +270,8 @@ function SemanticRow({ token }: { token: SemanticToken }) {
       <SemName>{token.name}</SemName>
       <SemSource>{token.source}</SemSource>
       <SemRole>{token.role}</SemRole>
-      <SemSwatch $bg={token.light} $mode="light" title={token.light} />
-      <SemSwatch $bg={token.dark} $mode="dark" title={token.dark} />
+      <SemSwatch $bg={token.light} $mode="light" title={toHex(token.light)} />
+      <SemSwatch $bg={token.dark} $mode="dark" title={toHex(token.dark)} />
     </>
   );
 }

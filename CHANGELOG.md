@@ -7,6 +7,12 @@ This project does not (yet) use semantic version tags.
 ## [Unreleased]
 
 ### Added
+- **Design System / Colors** page (`Design System/Colors` story) documenting the colour
+  foundation: the primary blue scale, the supporting primitive hues (green, aqua, purple,
+  red) and the neutral greys — each shown `light` + `dark` — plus the semantic tokens
+  (`link`, `success`, `danger`, `textPrimary`…) and the primitive they alias. Backed by a
+  typed source of truth, `src/styles/palette.ts`, extracted from `tokens.css`. The new
+  **Design System** section sorts first in the sidebar.
 - Storybook **Docs**: `autodocs` enabled so every component gets an auto-generated Docs
   tab (prose + props table + showcase), plus MDX support wired up (`../src/**/*.mdx` glob)
   for hand-written doc pages. Sidebar ordered Organisms → Molecules → Atoms.

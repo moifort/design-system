@@ -28,6 +28,13 @@ Gateway status card on a Waveshare 4-colour e-ink panel:
   reference console, so what you see is exactly the real thing.
 - **Portable** — hard-coded mock data, no backend; drop components into any React app.
 
+### Foundations
+
+- **Colours** — the full palette in the *Design System → Colors* story: the primary blue
+  scale, the supporting primitive hues and neutral greys (each in `light` + `dark`), and the
+  semantic tokens components read from the theme. Typed source of truth in
+  `storybook/src/styles/palette.ts`.
+
 ### Components today
 
 - `GatewayCard` — gateway/router status card (device identity, throughput sparkline,

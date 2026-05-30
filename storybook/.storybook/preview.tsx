@@ -45,7 +45,7 @@ const preview: Preview = {
     layout: "centered",
     controls: { expanded: true },
     options: {
-      storySort: { order: ["Organisms", "Molecules", "Atoms"] },
+      storySort: { order: ["Design System", "Organisms", "Molecules", "Atoms"] },
     },
   },
 };

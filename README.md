@@ -28,7 +28,10 @@ Gateway status card on a Waveshare 4-colour e-ink panel:
   reference console, so what you see is exactly the real thing.
 - **Portable** — hard-coded mock data, no backend; drop components into any React app.
 
-### Foundations
+The Storybook is split into two sections: **Design System** (foundations) and
+**Components** (the building blocks, by Atomic Design level).
+
+### Design System
 
 - **Colours** — the full palette in the *Design System → Colors* story: the primary blue
   scale, the supporting primitive hues and neutral greys (each in `light` + `dark`), and the
@@ -37,8 +40,14 @@ Gateway status card on a Waveshare 4-colour e-ink panel:
 
 ### Components today
 
-- `GatewayCard` — gateway/router status card (device identity, throughput sparkline,
-  connection counts, latency, uplink stats), in `light`, `dark`, and `eink`.
+Generic, reusable names (not domain-specific), each with its own story — a single tri-theme
+gallery showing all its declinations (tones, sizes, states, data shapes) side by side on
+`light` / `dark` / `eink`.
+
+- **Organisms** — `GatewayCard` (gateway/router status card: device identity, throughput
+  sparkline, counters, latency, uplink stats).
+- **Molecules** — `Header`, `CounterGroup`, `DataRow`, `MetricPair`, `ChipGroup`, `Button`.
+- **Atoms** — `Surface`, `Text`, `Icon`, `Divider`, `Sparkline`.
 
 ## Structure
 

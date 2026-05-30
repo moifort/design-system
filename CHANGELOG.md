@@ -7,6 +7,14 @@ This project does not (yet) use semantic version tags.
 ## [Unreleased]
 
 ### Added
+- **Component stories for every atom and molecule** of the GatewayCard, each a single
+  tri-theme gallery (light · dark · e-ink) listing the component's declinations:
+  - Atoms — `Surface`, `Text` (7 tones + `$strong`), `Icon` (all 10 glyphs, sizes,
+    `currentColor` tints), `Divider`, `Sparkline` (realistic / ramp / spiky / flat).
+  - Molecules — `Header`, `CounterGroup`, `DataRow`, `MetricPair`, `ChipGroup`, `Button`
+    (generic, reusable names — not domain-specific).
+  - New `src/styles/Showcase.tsx` helper (`Stack` / `Row` / `Frame` / `Specimen`) for
+    laying out labelled specimens inside a `ThemeShowcase`.
 - **Design System / Colors** page (`Design System/Colors` story) documenting the colour
   foundation: the primary blue scale, the supporting primitive hues (green, aqua, purple,
   red) and the neutral greys — each shown `light` + `dark` — plus the semantic tokens
@@ -15,11 +23,16 @@ This project does not (yet) use semantic version tags.
   **Design System** section sorts first in the sidebar.
 - Storybook **Docs**: `autodocs` enabled so every component gets an auto-generated Docs
   tab (prose + props table + showcase), plus MDX support wired up (`../src/**/*.mdx` glob)
-  for hand-written doc pages. Sidebar ordered Organisms → Molecules → Atoms.
+  for hand-written doc pages.
 - `ThemeShowcase` harness — renders a component across all three target screens (light,
   dark, e-ink) side by side. Convention: one story per component, every medium at once.
 
 ### Changed
+- **Sidebar split into two sections**: `Design System` (foundations — colours) and
+  `Components` (`Components/Organisms → Components/Molecules → Components/Atoms`). Molecule
+  components renamed to generic, reusable names: `DeviceHeader → Header`,
+  `ActionButton → Button`, `StatRow → DataRow`, `ConnectionCounts → CounterGroup`,
+  `Throughput → MetricPair`, `LatencyRow → ChipGroup`.
 - `GatewayCard` stories collapsed into a single `Themes` story (light · dark · e-ink,
   left → right) via `ThemeShowcase`, replacing the per-theme `Default` / `Dark` stories
   and the separate e-ink stories file.

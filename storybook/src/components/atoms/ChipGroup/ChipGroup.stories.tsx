@@ -20,9 +20,10 @@ const go = { logo: google, alt: "Google" };
 const cf = { logo: cloudflare, alt: "Cloudflare" };
 
 /**
- * A row of equal-width chips, each pairing a logo with a value. On the web each chip is a
- * faint grey inset; on **e-ink** the fill would vanish at threshold, so it becomes a 1px
- * black box and the logos render as black silhouettes. Shown with one to three chips.
+ * A row of equal-width chips, each pairing an optional logo with a value. On the web each
+ * chip is a faint grey inset; on **e-ink** the fill would vanish at threshold, so it becomes
+ * a 1px black box and the logos render as black silhouettes. Shown with one to three chips,
+ * plus value-only chips (no logo).
  */
 export const Themes: Story = {
   args: { items: [] },
@@ -53,6 +54,17 @@ export const Themes: Story = {
         <Specimen label="single">
           <Frame $w={240}>
             <ChipGroup items={[{ ...go, value: "240ms" }]} />
+          </Frame>
+        </Specimen>
+        <Specimen label="value only · no logo">
+          <Frame $w={240}>
+            <ChipGroup
+              items={[
+                { alt: "p50", value: "12ms" },
+                { alt: "p95", value: "48ms" },
+                { alt: "p99", value: "120ms" },
+              ]}
+            />
           </Frame>
         </Specimen>
       </Stack>

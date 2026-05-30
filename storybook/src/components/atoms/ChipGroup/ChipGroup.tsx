@@ -30,15 +30,15 @@ const Logo = styled.img`
   filter: ${({ theme }) => (theme.mode === "eink" ? "grayscale(1) brightness(0)" : "none")};
 `;
 
-export type ChipItem = { logo: string; alt: string; value: string };
+export type ChipItem = { logo?: string; alt: string; value: string };
 
-/** A row of equal-width chips, each pairing a logo with a value. */
+/** A row of equal-width chips, each pairing an optional logo with a value. */
 export function ChipGroup({ items }: { items: ChipItem[] }) {
   return (
     <Row>
       {items.map((it) => (
         <Pill key={it.alt}>
-          <Logo src={it.logo} alt={it.alt} />
+          {it.logo && <Logo src={it.logo} alt={it.alt} />}
           <Text $tone="value" $strong>
             {it.value}
           </Text>

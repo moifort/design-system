@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const SB = process.env.SB ?? "http://localhost:6006";
-const STORY = "organisms-gatewaycard-e-ink--source";
+const STORY = "components-organisms-gatewaycard-e-ink--source";
 const here = dirname(fileURLToPath(import.meta.url));
 const out = join(here, "reference", "eink-source.png");
 mkdirSync(join(here, "reference"), { recursive: true });

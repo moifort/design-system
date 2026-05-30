@@ -22,6 +22,9 @@ export const globalTypes = {
 };
 
 const withTheme: Decorator = (Story, context) => {
+  // Showcase stories render every theme themselves (see ThemeShowcase) — don't wrap them
+  // in the single toolbar theme.
+  if (context.parameters.themeShowcase) return <Story />;
   const mode = (context.globals.theme as ThemeMode) ?? "light";
   const theme = createTheme(mode);
   return (

@@ -6,7 +6,14 @@ This project does not (yet) use semantic version tags.
 
 ## [Unreleased]
 
+### Added
+- `ThemeShowcase` harness — renders a component across all three target screens (light,
+  dark, e-ink) side by side. Convention: one story per component, every medium at once.
+
 ### Changed
+- `GatewayCard` stories collapsed into a single `Themes` story (light · dark · e-ink,
+  left → right) via `ThemeShowcase`, replacing the per-theme `Default` / `Dark` stories
+  and the separate e-ink stories file.
 - Excluded `base/` from the guide: the UniFi console mirror is now a local-only,
   gitignored inspiration cache (a developer reference tool), no longer tracked or shipped.
   The guide is `storybook/` alone.

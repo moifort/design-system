@@ -43,6 +43,12 @@ This project does not (yet) use semantic version tags.
   (`checkout@v6`, `configure-pages@v6`, `upload-pages-artifact@v5`,
   `deploy-pages@v5`) to clear the Node 20 deprecation warning.
 
+### Fixed
+- `Icon` — removed the grey backing disc from the `clock` glyph; it now renders as
+  a clean accent outline, matching the reference history icon.
+- `CounterGroup` — connector dots now use the accent colour instead of the neutral
+  hairline grey, matching the reference.
+
 ### Added
 - Initial **Design System** foundation — a reusable component library for shipping
   beautiful apps out of the box across web, mobile, and embedded screens.

@@ -19,10 +19,10 @@ const Item = styled.div`
   flex: none;
 `;
 
-/** Dotted line filling the space between two counters. */
+/** Dotted accent line filling the space between two counters. */
 const Connector = styled.div`
   flex: 1 1 auto;
-  border-top: 1px dotted ${({ theme }) => theme.color.border};
+  border-top: 1px dotted ${({ theme }) => theme.color.link};
   align-self: center;
   min-width: 8px;
 `;

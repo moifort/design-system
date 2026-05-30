@@ -11,9 +11,10 @@ in Storybook.
 ## Layout
 
 - `storybook/` — Vite + React + TypeScript + styled-components component library, Atomic
-  Design (atoms → molecules → organisms), Storybook as the validation harness. Published
-  to GitHub Pages via `.github/workflows/storybook.yml`. See `storybook/CLAUDE.md` for
-  component-level rules. **This is the guide** — the only tracked, shipped part.
+  Design shifted one rung (foundations → atoms → molecules → organisms; primitives live in
+  the `Design System` section), Storybook as the validation harness. Published to GitHub
+  Pages via `.github/workflows/storybook.yml`. See `storybook/CLAUDE.md` for the taxonomy
+  and component-level rules. **This is the guide** — the only tracked, shipped part.
 - `base/` — **local-only, gitignored** caching reverse proxy that mirrors the live UniFi
   console (server-side auto-login, plain HTTP). It is the inspiration cache used as the
   pixel-perfect reference while rebuilding components — a developer tool, **not part of
